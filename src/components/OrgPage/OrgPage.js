@@ -1,6 +1,6 @@
 import React from 'react';
 
-function OrganisationPage() {
+function OrgPage() {
   return (
       <div>
         ORGANISTAION
@@ -8,4 +8,4 @@ function OrganisationPage() {
   );
 }
 
-export default OrganisationPage;
+export default OrgPage;
