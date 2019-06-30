@@ -9,12 +9,12 @@ import FollowingContainer from './containers/FollowingContainer';
 
 export const MainRouter = () => (
   <Router>
-    <Route path="/" exact component={SearchContainer} />
-    <Route path="/org/:id" exact component={OrgContainer} />
-    <Route path="/org/:id/members" exact component={MembersContainer} />
-    <Route path="/users/:id" exact component={UserContainer} />
-    <Route path="/users/:id/followers" exact component={FollowersContainer} />
-    <Route path="/users/:id/following" exact component={FollowingContainer} />
+    <Route path="/search-page/" exact component={SearchContainer} />
+    <Route path="/search-page/org/:id" exact component={OrgContainer} />
+    <Route path="/search-page/org/:id/members" exact component={MembersContainer} />
+    <Route path="/search-page/users/:id" exact component={UserContainer} />
+    <Route path="/search-page/users/:id/followers" exact component={FollowersContainer} />
+    <Route path="/search-page/users/:id/following" exact component={FollowingContainer} />
   </Router>
 );
 
