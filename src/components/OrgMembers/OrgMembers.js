@@ -5,7 +5,7 @@ import OrgInfoContainer from '../../containers/OrgInfoContainer';
 class OrgMembers extends React.Component {
   render() {
     return (
-      <div>
+      <div className="page-inner">
         <div className="org-members-wrap">
           <OrgInfoContainer />
           <div className="user-title-wrap">
