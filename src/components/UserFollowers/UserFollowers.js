@@ -1,4 +1,5 @@
 import React from 'react';
+import UserInfoContainer from '../../containers/UserInfoContainer';
 
 class UserFollowers extends React.Component {
   componentDidMount() {
@@ -6,23 +7,21 @@ class UserFollowers extends React.Component {
     this.props.getUserFollowers(this.props.currentUser);
   }
   render() {
-    let { currentUserInfo } = this.props;
     return (
-        <div>
-          <div className="avatar">
-            <img src={currentUserInfo.avatar_url} alt={`${currentUserInfo.login} avatar`} />
+        <div className="page-inner">
+          <UserInfoContainer /> 
+          <div className="user-title-wrap">
+            <h2 className="title">Followers</h2>
           </div>
-          <div className="title-wrap">
-            <h2 className="title">{currentUserInfo.name}</h2>
-            <p className="desc">{currentUserInfo.login}</p>
-            {(currentUserInfo.bio !== null) ? <p className="desc">{currentUserInfo.bio}</p> : null}
-          </div>
-          <h2 className="title">Followers</h2>
-          <ul className="followers-list">
+          <ul className="user-list follow-list">
             {this.props.currentUserFollowers.map((follower, index) => (
-              <li className="follower" key={index}>
-                <img src={follower.avatar_url} alt={`${follower.login} avatar`} />
-                <h2 className="title">{follower.login}</h2>
+              <li className="user-item" key={index}>
+                <img 
+                  src={follower.avatar_url} 
+                  alt={`${follower.login} avatar`}
+                  className="user-avatar"
+                 />
+                <h2 className="user-title follow-title">{follower.login}</h2>
               </li>
             ))}
           </ul>

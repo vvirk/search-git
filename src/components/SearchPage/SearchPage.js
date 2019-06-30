@@ -5,24 +5,33 @@ class SearchPage extends React.Component {
   state = { orgsname: '' };
   render() {
     return (
-      <div>
-        <h2>Github organisations: </h2>
+      <div className="search-inner">
+        <h1 className="main-title">Github organisations search</h1>
+        <div className="search-input-wrap">
         <input
+          className="search-input"
           type="text"
           value={this.state.orgsname}
           onChange={ e => this.setState({ orgsname: e.target.value })}
           placeholder="Github organisations..."
         />
-        <button onClick={() => this.props.getOrgs(this.state.orgsname)}>
-          Get organisation
+        <button 
+          className="search-btn"
+          onClick={() => this.props.getOrgs(this.state.orgsname)}>
+          search
         </button>
-        <ul>
+        </div>
+        <ul className="search-results-list">
           {this.props.orgs.map((org, index) => (
-            <li 
+            <li
+              className="search-result-item"
               key={index}
               onClick={()=>{this.props.getCurrentOrg(org.login)}}
             >
-              <Link to={`/org/${org.login}`}>
+              <Link 
+                to={`/org/${org.login}`}
+                className="search-result-link"
+              >
                 {org.login}
               </Link>
             </li>
