@@ -1,1 +1,10 @@
 export const ADD_RESULT = 'ADD_RESULT';
+export const ADD_ORG_INFO = 'ADD_ORG_INFO';
+export const GET_CURRENT_ORG = 'GET_CURRENT_ORG';
+export const ADD_ORG_MEMBERS = 'ADD_ORG_MEMBERS';
+export const ADD_ORG_REPOS = 'ADD_ORG_REPOS';
+export const GET_CURRENT_USER = 'GET_CURRENT_USER';
+export const ADD_USER_INFO = 'ADD_USER_INFO';
+export const ADD_USER_FOLLOWERS = 'ADD_USER_FOLLOWERS';
+export const ADD_USER_FOLLOWING = 'ADD_USER_FOLLOWING';
+export const ADD_USER_REPOS = 'ADD_USER_REPOS';
