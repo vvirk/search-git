@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/search-git/static/css/main.e5747302.chunk.css",
-    "main.js": "/search-git/static/js/main.48c16cb5.chunk.js",
-    "main.js.map": "/search-git/static/js/main.48c16cb5.chunk.js.map",
+    "main.js": "/search-git/static/js/main.ca8ea2db.chunk.js",
+    "main.js.map": "/search-git/static/js/main.ca8ea2db.chunk.js.map",
     "runtime~main.js": "/search-git/static/js/runtime~main.e8fe0e6b.js",
     "runtime~main.js.map": "/search-git/static/js/runtime~main.e8fe0e6b.js.map",
-    "static/js/2.14dce1fc.chunk.js": "/search-git/static/js/2.14dce1fc.chunk.js",
-    "static/js/2.14dce1fc.chunk.js.map": "/search-git/static/js/2.14dce1fc.chunk.js.map",
+    "static/js/2.2b69251b.chunk.js": "/search-git/static/js/2.2b69251b.chunk.js",
+    "static/js/2.2b69251b.chunk.js.map": "/search-git/static/js/2.2b69251b.chunk.js.map",
     "index.html": "/search-git/index.html",
-    "precache-manifest.0c0d42ad2e2e9ea49b55cb639d15db1b.js": "/search-git/precache-manifest.0c0d42ad2e2e9ea49b55cb639d15db1b.js",
+    "precache-manifest.d779e197ebc9f0a3c00a93e2ad23d2b4.js": "/search-git/precache-manifest.d779e197ebc9f0a3c00a93e2ad23d2b4.js",
     "service-worker.js": "/search-git/service-worker.js",
     "static/css/main.e5747302.chunk.css.map": "/search-git/static/css/main.e5747302.chunk.css.map"
   }
