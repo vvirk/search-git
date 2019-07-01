@@ -17,4 +17,5 @@ yarn
 ```
 yarn start
 ```
-
+After yarn start compiled successfully, you can view search-git in the browser, go to the 
+[http://localhost:3000](http://localhost:3000) link.
