@@ -29,7 +29,7 @@ class SearchPage extends React.Component {
               onClick={()=>{this.props.getCurrentOrg(org.login)}}
             >
               <Link 
-                to={`/org/${org.login}`}
+                to={`/search-git/org/${org.login}`}
                 className="search-result-link"
               >
                 {org.login}

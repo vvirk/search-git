@@ -13,7 +13,7 @@ class UserInfo extends React.Component {
           <div className="title-wrap">
             <h2 className="title">
             <Link 
-              to={`/users/${currentUserInfo.login}`}
+              to={`/search-git/users/${currentUserInfo.login}`}
               className="title-link"
             >
               {currentUserInfo.name}
@@ -30,7 +30,7 @@ class UserInfo extends React.Component {
           <ul className="folow-wrap">
             <li className="folow-item">
               <Link 
-                to={`/users/${currentUserInfo.login}/followers`}
+                to={`/search-git/users/${currentUserInfo.login}/followers`}
                 className="folow-item-link"
               >
                 followers({currentUserInfo.followers})
@@ -38,7 +38,7 @@ class UserInfo extends React.Component {
             </li>
             <li className="folow-item">
               <Link 
-                to={`/users/${currentUserInfo.login}/following`}
+                to={`/search-git/users/${currentUserInfo.login}/following`}
                 className="folow-item-link"
               >
                 following({currentUserInfo.following})
