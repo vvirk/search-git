@@ -14,10 +14,10 @@ class OrgInfo extends React.Component {
             {(org.description !== null) ? <p className="desc">{org.description}</p> : null}
           </div>  
           <ul className="info-list">
-          {(org.location !== null) ? <li className="info-item">{org.location}</li> : null}
-          {(org.blog !== null) ? <li className="info-item">{org.blog}</li> : null}
-          {(org.email !== null) ? <li className="info-item">{org.email}</li> : null}
-          {(org.is_verified === true) ? <li className="verifed">verifed</li> : null}
+            {(org.location !== null) ? <li className="info-item">{org.location}</li> : null}
+            {(org.blog !== null) ? <li className="info-item">{org.blog}</li> : null}
+            {(org.email !== null) ? <li className="info-item">{org.email}</li> : null}
+            {(org.is_verified === true) ? <li className="verifed">verifed</li> : null}
           </ul>
         </div>
       </div>

@@ -24,17 +24,17 @@ class OrgMembers extends React.Component {
                   className="user-avatar"    
                 />
                 <div className="user-info">
-                  <Link to={`/search-git/users/${member.login}`}>
+                  <Link to={`/users/${member.login}`}>
                     <h2 className="user-title">{member.login}</h2>
                   </Link>
                   <Link 
                     className="user-link"
-                    to={`/search-git/users/${member.login}/followers`} >
+                    to={`/users/${member.login}/followers`} >
                       followers
                   </Link>
                   <Link 
                     className="user-link" 
-                    to={`/search-git/users/${member.login}/following`} >
+                    to={`/users/${member.login}/following`} >
                       following
                   </Link>
                 </div>
