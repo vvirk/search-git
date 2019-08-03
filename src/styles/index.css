@@ -51,11 +51,15 @@ main {
     padding: 10px 15px 10px 35px;
     width: 100%;
     max-width: 400px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 40px 0 0 40px;
     color: #24292e;
 }
 
+.search-input:focus {
+    border-color: #24292e;
+    transition: .5s;
+}
 .search-btn {
     padding: 10px 35px 10px 30px;
     color: #fff;
@@ -65,7 +69,8 @@ main {
     border-radius: 0 50px 50px 0;
 }
 
-.search-btn:hover {
+.search-btn:hover,
+.search-btn:focus {
     background: #111213;
     transition: .5s;
 }
@@ -85,12 +90,15 @@ main {
 .search-result-link {
     color: #24292e;
     font-weight: 700;
+    outline: none;
 }
 
-.search-result-link:hover {
+.search-result-link:hover,
+.search-result-link:focus {
     color: #000;
     transform: scale(1.2);
     transition: .5s;
+    outline: none;
 }
 
 .search-result-link:visited {

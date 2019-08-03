@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import OrgInfoContainer from '../../containers/OrgInfoContainer';
 
 class OrgMembers extends React.Component {
+  componentDidMount() {
+    this.props.getOrg(this.props.match.params.id);
+    this.props.getOrgMembers(this.props.match.params.id);
+  }
   render() {
+    console.log(this.props);
     return (
       <div className="page-inner">
         <div className="org-members-wrap">

@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../actions/index';
+import { 
+  getCurrentUser,
+  getOrgMembers,
+  getOrg,
+} from '../actions/index';
 import OrgMembers from '../components/OrgMembers/OrgMembers'; 
 
 const mapStateToProps = state => ({
@@ -8,6 +12,8 @@ const mapStateToProps = state => ({
   });
   const mapDispatchToProps = {
     getCurrentUser,
+    getOrgMembers,
+    getOrg,
   };
   export const MembersContainer = connect(
     mapStateToProps,
