@@ -3,8 +3,8 @@ import UserInfoContainer from '../../containers/UserInfoContainer';
 
 class UserFollowing extends React.Component {
   componentDidMount() {
-    this.props.getUser(this.props.currentUser);
-    this.props.getUserFollowing(this.props.currentUser);
+    this.props.getUser(this.props.match.params.id);
+    this.props.getUserFollowing(this.props.match.params.id);
   }
   render() {
     return (

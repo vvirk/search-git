@@ -4,9 +4,9 @@ import OrgInfoContainer from '../../containers/OrgInfoContainer';
 
 class OrgPage extends React.Component {
   componentDidMount() {
-    this.props.getOrg(this.props.currentOrg);
-    this.props.getOrgMembers(this.props.currentOrg);
-    this.props.getOrgRepos(this.props.currentOrg);
+    this.props.getOrg(this.props.match.params.id);
+    this.props.getOrgMembers(this.props.match.params.id);
+    this.props.getOrgRepos(this.props.match.params.id);
   }
   render() {
     let orgMembers = this.props.currentOrgMembers.slice(0,5);
