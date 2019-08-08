@@ -1,5 +1,4 @@
 import * as type from './actionTypes';
-//import history from '../history';
 
 export const addResult = result => ({
     type: type.ADD_RESULT,
@@ -54,7 +53,6 @@ export const addUserRepos = userRepos => ({
 export const apiUrl = 'https://api.github.com/';
 export const getOrgs = (orgsname) => async (dispatch) => {
   try {
-    //const param = `?search=${orgsname}`;
     const url =`${apiUrl}search/users?q=${orgsname}+type:org`;
     const response = await fetch(url);
     const responseBody = await response.json();

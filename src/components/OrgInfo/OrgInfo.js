@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 //styles
 import s from './styles/orgInfo.module.css';
 
@@ -12,7 +14,12 @@ class OrgInfo extends React.Component {
         </div>
         <div className={s.info}>
           <div className={s.titleWrap}>
-            <h2 className={s.title}>{(org.name == null) ? org.login : org.name}</h2>
+            <Link 
+              to={`/org/${org.login}`}
+              className={s.title}
+            >
+              {(org.name == null) ? org.login : org.name}
+            </Link>
             {(org.description !== null) ? <p className={s.desc}>{org.description}</p> : null}
           </div>  
           <ul className={s.infoList}>

@@ -1,9 +1,11 @@
 .infoWrap {
-    padding-right: 25px;
+    padding-right: 35px;
+    min-width: 200px;
 }
 
 .logo {
     width: 100%;
+    min-width: 100px;
     max-width: 250px;
     border-radius: 10px;
     overflow: hidden;

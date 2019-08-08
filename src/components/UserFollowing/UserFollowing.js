@@ -1,5 +1,6 @@
 import React from 'react';
 import UserInfoContainer from '../../containers/UserInfoContainer';
+import Member from '../Member/Member';
 
 class UserFollowing extends React.Component {
   componentDidMount() {
@@ -9,23 +10,20 @@ class UserFollowing extends React.Component {
   render() {
     console.log(this.props);
     return (
-        <div className="page-inner">
+        <div className="user-inner">
           <UserInfoContainer />
-          <div className="user-title-wrap">
+          <div className="user-wrap">
             <h2 className="title">Following list</h2>
-          </div>
-          <ul className="user-list follow-list">
-            {this.props.currentUserFollowing.map((follow, index) => (
-              <li className="user-item" key={index}>
-                <img 
-                  src={follow.avatar_url} 
-                  alt={`${follow.login} avatar`} 
-                  className="user-avatar"
+            <ul className="users-list">
+              {this.props.currentUserFollowing.map((follow, index) => (
+                <Member 
+                  index={index}
+                  avatar={follow.avatar_url}
+                  login={follow.login}
                 />
-                <h2 className="user-title follow-title">{follow.login}</h2>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </div>
         </div>
     );
   }

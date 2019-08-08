@@ -27,6 +27,10 @@
     color: #24292e;
 }
 
+.title:hover {
+    text-decoration: underline;
+}
+
 .desc {
     padding: 5px 0;
     font-size: 18px;

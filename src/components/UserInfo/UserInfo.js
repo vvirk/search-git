@@ -7,6 +7,7 @@ import s from './styles/userInfo.module.css';
 class UserInfo extends React.Component {
   render() {
     let { currentUserInfo } = this.props;
+    console.log(currentUserInfo);
     return (
       <div className={s.infoWrap}>
         <div className={s.logo}>
@@ -24,6 +25,10 @@ class UserInfo extends React.Component {
             {(currentUserInfo.bio !== null) ? <p className="desc">{currentUserInfo.bio}</p> : null}
           </div>
           <ul className={s.infoList}>
+            {(currentUserInfo.company !== null) ? 
+            <li className={s.infoItem}>
+              {currentUserInfo.company}
+            </li> : null}
             {(currentUserInfo.location !== null) ? 
               <li className={s.infoItem}>{currentUserInfo.location}</li> : null}
             {(currentUserInfo.blog !== null) ? 

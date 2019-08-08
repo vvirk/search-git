@@ -15,7 +15,7 @@ class Header extends React.Component {
           <Link
             to="/"
             className={s.logo}
-            onClick={() => this.props.getOrgs('#')}
+            onClick={() => this.props.addResult('')}
           >
             <img src={headerLogo} alt="Header logo"/>
           </Link>

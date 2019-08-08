@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { getOrgs } from '../actions/index';
+import { addResult } from '../actions/index';
 import Header from '../components/Header/Header'; 
 
 const mapStateToProps = state => ({
 });
 const mapDispatchToProps = {
-  getOrgs,
+  addResult,
 };
 export const HeaderContainer = connect(
   mapStateToProps,
