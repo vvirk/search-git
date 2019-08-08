@@ -1,6 +1,6 @@
 # SearchGit
 
-[SearchGit](https://boxing199.github.io/search-git/)
+[SearchGit](https://vvirk.github.io/search-git/)
 
 The simple web app that use `GitHub API` for search GitHub organisations.
 
