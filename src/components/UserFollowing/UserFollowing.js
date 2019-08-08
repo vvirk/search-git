@@ -7,6 +7,7 @@ class UserFollowing extends React.Component {
     this.props.getUserFollowing(this.props.match.params.id);
   }
   render() {
+    console.log(this.props);
     return (
         <div className="page-inner">
           <UserInfoContainer />

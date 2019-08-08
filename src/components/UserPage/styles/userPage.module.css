@@ -1,0 +1,10 @@
+.userPageInner {
+    display: flex;
+    padding: 20px 15px;
+}
+
+@media (max-width: 720px) {
+    .userPageInner {
+        flex-direction: column;
+    }
+}

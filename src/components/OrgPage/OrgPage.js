@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import OrgInfoContainer from '../../containers/OrgInfoContainer';
+import ReposList from '../ReposList/ReposList';
 
 class OrgPage extends React.Component {
   componentDidMount() {
@@ -12,36 +13,36 @@ class OrgPage extends React.Component {
     let orgMembers = this.props.currentOrgMembers.slice(0,5);
     let { org } = this.props;
     return (
-      <div className="page-inner">
-        <OrgInfoContainer />
-        <div className="members-wrap">
-          <h2 className="title">Members</h2>
-            <ul className="users-list">
-              {orgMembers.map((member, index) => (
-                <li 
-                  className="user-item" 
-                  key={index}
-                  onClick={()=>{this.props.getCurrentUser(member.login)}}
-                >
-                  <img 
-                    src={member.avatar_url} 
-                    alt={`${member.login} avatar`} 
-                    className="user-avatar"  
-                  />
-                  <div className="user-info">
-                    <Link to={`/users/${member.login}`}>
-                      <h2 className="user-title">{member.login}</h2>
-                    </Link>
-                    <Link
-                      className="user-link" 
-                      to={`/users/${member.login}/followers`} >followers</Link>
-                    <Link
-                      className="user-link" 
-                      to={`/users/${member.login}/following`} >following</Link>
-                  </div>
-                </li>
-              ))}
-            </ul>
+        <div className="page-inner">
+          <OrgInfoContainer />
+          <div className="members-wrap">
+            <h2 className="title">Members</h2>
+              <ul className="users-list">
+                {orgMembers.map((member, index) => (
+                  <li 
+                    className="user-item" 
+                    key={index}
+                    onClick={()=>{this.props.getCurrentUser(member.login)}}
+                  >
+                    <img 
+                      src={member.avatar_url} 
+                      alt={`${member.login} avatar`} 
+                      className="user-avatar"  
+                    />
+                    <div className="user-info">
+                      <Link to={`/users/${member.login}`}>
+                        <h2 className="user-title">{member.login}</h2>
+                      </Link>
+                      <Link
+                        className="user-link" 
+                        to={`/users/${member.login}/followers`} >followers</Link>
+                      <Link
+                        className="user-link" 
+                        to={`/users/${member.login}/following`} >following</Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             <div className="view-all-wrap">
               {(this.props.currentOrgMembers.length > 5) ? 
               <Link 
@@ -52,28 +53,10 @@ class OrgPage extends React.Component {
               </Link> : null }
             </div>
           </div>
-        <div className="repos-wrap">
-          <h2 className="title">Repos</h2>
-          <ul className="repos-list">
-            {this.props.currentOrgRepos.map((repo, index) => (
-            <li 
-              className="repos-item"
-              key={index}
-            >
-              <a 
-                className="repos-item-link"
-                href={repo.html_url} 
-                target="_blank"                   
-                rel="noopener noreferrer"
-                title="watch on GitHub"
-              >
-                {repo.name}
-              </a>
-            </li>
-            ))}
-          </ul>
+          <ReposList 
+            repos={this.props.currentOrgRepos}
+          />
         </div>
-      </div>
     );
   }
 }
