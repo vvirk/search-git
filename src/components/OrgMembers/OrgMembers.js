@@ -8,7 +8,6 @@ class OrgMembers extends React.Component {
     this.props.getOrgMembers(this.props.match.params.id);
   }
   render() {
-    console.log(this.props);
     return (
       <div className="page-inner">
         <OrgInfoContainer />

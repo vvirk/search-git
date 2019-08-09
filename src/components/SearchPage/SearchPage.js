@@ -28,7 +28,6 @@ class SearchPage extends React.Component {
     }
   }
   render() {
-    console.log(this.props);
     return (
       <div className={s.inner}>
         <h1 className={s.title}>Github organisations search</h1>
@@ -38,7 +37,7 @@ class SearchPage extends React.Component {
           type="text"
           value={this.state.orgsname}
           onChange={ e => this.setState({ orgsname: e.target.value })}
-          onKeyDown={ e => (e.target.value) ? (e.keyCode === 13) ? this.props.getOrgs(e.target.value) : null : null}
+          onKeyDown={ e => (e.target.value) ? (e.keyCode === 13) ? this.props.getOrgs(e.target.value) && history.push(`?search=${e.target.value}`): null : null}
           placeholder="Github organisations..."
         />
         <button 
