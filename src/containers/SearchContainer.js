@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { 
   getOrgs,
   getCurrentOrg,
+  addResult,
 } from '../actions/index';
 import SearchPage from '../components/SearchPage/SearchPage';
 
@@ -12,6 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     getOrgs,
     getCurrentOrg,
+    addResult,
 };
 
 export const SearchContainer = connect(

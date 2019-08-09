@@ -20,7 +20,7 @@
     width: 100%;
     max-width: 400px;
     border: 1px solid #dfe1e5;
-    border-radius: 40px 0 0 40px;
+    border-radius: 3px 0 0 3px;
     color: #24292e;
 }
 
@@ -36,7 +36,7 @@
     text-transform: uppercase;
     background: #24292e;
     border: none;
-    border-radius: 0 50px 50px 0;
+    border-radius: 0 3px 3px 0;
 }
 
 .searchBtn:hover,
@@ -58,12 +58,12 @@
 }
 
 .resultItem:first-child {
-    border-radius: 20px 20px 0 0;
+    border-radius: 3px 3px 0 0;
 }
 
 .resultItem:last-child {
     border-bottom: 1px solid #dfe1e5;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 3px 3px;
 }
 
 .resultLink {

@@ -7,13 +7,15 @@
     width: 100%;
     min-width: 100px;
     max-width: 250px;
-    border-radius: 10px;
+    border-radius: 3px;
     overflow: hidden;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 }
 
 .logo img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 }
 
 .info {
@@ -23,7 +25,7 @@
 .title {
     color: #24292e;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .title:hover,

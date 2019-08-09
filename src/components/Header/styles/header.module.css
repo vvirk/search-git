@@ -1,29 +1,27 @@
 .header {
     width: 100%;
+    padding: 25px 0;
     background: #24292e;
 }
             
-.logoWrap {
-    margin: 0 25px;
-}
-            
 .logo {
-    max-height: 100px;
+    margin: 0 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
 }
             
-.logo:hover,
-.logo:focus {
+.logo:hover {
     opacity: .5;
     outline: none;
 }
-            
-.logo img {
-    height: 100px;
-    max-height: 100%;
-}
 
-@media (max-width: 480px) {
-    .logo img {
-        height: 75px;
+@media (max-width: 580px) {
+    .header {
+        padding: 20px 0;
+    }
+    .logo {
+        margin: 0 20px;
+        font-size: 20px;
     }
 }

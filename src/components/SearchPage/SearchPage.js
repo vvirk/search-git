@@ -12,6 +12,7 @@ class SearchPage extends React.Component {
     if (this.props.location.search) {
       const param = queryString.parse(this.props.location.search);
       this.props.getOrgs(param.search);
+      this.setState({ orgsname: param.search });
     }
   }
   componentDidUpdate(prevProps) {
@@ -19,7 +20,11 @@ class SearchPage extends React.Component {
       const param = queryString.parse(this.props.location.search);
       if(param.search) {
         this.props.getOrgs(param.search);
-      } else this.props.getOrgs('#');
+        this.setState({ orgsname: param.search });
+      } else {
+          this.props.addResult('');
+          this.setState({ orgsname: '' });
+        }
     }
   }
   render() {
@@ -33,6 +38,7 @@ class SearchPage extends React.Component {
           type="text"
           value={this.state.orgsname}
           onChange={ e => this.setState({ orgsname: e.target.value })}
+          onKeyDown={ e => (e.target.value) ? (e.keyCode === 13) ? this.props.getOrgs(e.target.value) : null : null}
           placeholder="Github organisations..."
         />
         <button 

@@ -76,3 +76,18 @@ main {
         flex-direction: column;
     }
 }
+
+@media (max-width: 580px) {
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 420px) {
+    .title {
+        font-size: 20px;
+    }
+    .view-all {
+        font-size: 14px;
+    }
+}
