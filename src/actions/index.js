@@ -57,9 +57,7 @@ export const getOrgs = (orgsname) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addResult(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getOrg = (currentOrg) => async (dispatch) => {
@@ -68,9 +66,7 @@ export const getOrg = (currentOrg) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgInfo(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getOrgMembers = (currentOrg) => async (dispatch) => {
@@ -79,9 +75,7 @@ export const getOrgMembers = (currentOrg) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgMembers(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getOrgRepos = (currentOrg) => async (dispatch) => {
@@ -90,9 +84,7 @@ export const getOrgRepos = (currentOrg) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgRepos(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getUser = (currentUser) => async (dispatch) => {
@@ -101,9 +93,7 @@ export const getUser = (currentUser) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUser(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getUserFollowers = (currentUser) => async (dispatch) => {
@@ -112,9 +102,7 @@ export const getUserFollowers = (currentUser) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserFollowers(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getUserFollowing = (currentUser) => async (dispatch) => {
@@ -123,9 +111,7 @@ export const getUserFollowing = (currentUser) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserFollowing(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
 
 export const getUserRepos = (currentUser) => async (dispatch) => {
@@ -134,7 +120,5 @@ export const getUserRepos = (currentUser) => async (dispatch) => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserRepos(responseBody));
-  } catch {
-    console.log('ERROR!');
-  }
+  } catch (e) { console.log(e); }
 };
