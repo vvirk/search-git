@@ -4,27 +4,30 @@ import Member from '../Member/Member';
 
 class OrgMembers extends React.Component {
   componentDidMount() {
-    this.props.getOrg(this.props.match.params.id);
-    this.props.getOrgMembers(this.props.match.params.id);
+    const { getOrg, getOrgMembers, match } = this.props;
+    getOrg(match.params.id);
+    getOrgMembers(match.params.id);
   }
   render() {
+    const { currentOrgMembers, getCurrentUser } = this.props;
+
     return (
       <div className="page-inner">
         <OrgInfoContainer />
         <div className="members-wrap">
           <h2 className="title">Members</h2>
           <ul className="users-list">
-            {this.props.currentOrgMembers.map((member, index) => (
+            {currentOrgMembers.map((member, index) => (
               <Member
                 index={index}
-                getUser={()=>{this.props.getCurrentUser(member.login)}}
+                getUser={()=>{getCurrentUser(member.login)}}
                 avatar={member.avatar_url}
                 login={member.login}
               />
             ))}
           </ul>
-        </div>  
-      </div> 
+        </div>
+      </div>
     );
   }
 }

@@ -4,17 +4,22 @@ import Member from '../Member/Member';
 
 class UserFollowing extends React.Component {
   componentDidMount() {
-    this.props.getUser(this.props.match.params.id);
-    this.props.getUserFollowing(this.props.match.params.id);
+    const { getUser, match, getUserFollowing } = this.props;
+
+    getUser(match.params.id);
+    getUserFollowing(match.params.id);
   }
+
   render() {
+    const { currentUserFollowing } = this.props;
+
     return (
         <div className="user-inner">
           <UserInfoContainer />
           <div className="user-wrap">
             <h2 className="title">Following list</h2>
             <ul className="users-list">
-              {this.props.currentUserFollowing.map((follow, index) => (
+              {currentUserFollowing.map((follow, index) => (
                 <Member 
                   index={index}
                   avatar={follow.avatar_url}

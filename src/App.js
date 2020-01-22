@@ -1,8 +1,6 @@
 import React from 'react';
 import MainRouter from './routes';
 
-function App () {
-    return <MainRouter />
-  }
+const App = () => <MainRouter />
 
 export default App;

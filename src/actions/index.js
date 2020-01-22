@@ -1,8 +1,8 @@
 import * as type from './actionTypes';
 
 export const addResult = result => ({
-    type: type.ADD_RESULT,
-    result,
+  type: type.ADD_RESULT,
+  result,
 });
 
 export const addOrgInfo = info => ({
@@ -51,74 +51,74 @@ export const addUserRepos = userRepos => ({
 });
 
 export const apiUrl = 'https://api.github.com/';
-export const getOrgs = (orgsname) => async (dispatch) => {
+export const getOrgs = orgsname => async dispatch => {
   try {
     const url =`${apiUrl}search/users?q=${orgsname}+type:org`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addResult(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getOrg = (currentOrg) => async (dispatch) => {
+export const getOrg = currentOrg => async dispatch => {
   try {
     const url =`${apiUrl}orgs/${currentOrg}`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgInfo(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getOrgMembers = (currentOrg) => async (dispatch) => {
+export const getOrgMembers = currentOrg => async dispatch => {
   try {
     const url =`${apiUrl}orgs/${currentOrg}/members`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgMembers(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getOrgRepos = (currentOrg) => async (dispatch) => {
+export const getOrgRepos = currentOrg => async dispatch => {
   try {
     const url =`${apiUrl}orgs/${currentOrg}/repos`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgRepos(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getUser = (currentUser) => async (dispatch) => {
+export const getUser = currentUser => async dispatch => {
   try {
     const url =`${apiUrl}users/${currentUser}`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUser(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getUserFollowers = (currentUser) => async (dispatch) => {
+export const getUserFollowers = currentUser => async dispatch => {
   try {
     const url =`${apiUrl}users/${currentUser}/followers`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserFollowers(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getUserFollowing = (currentUser) => async (dispatch) => {
+export const getUserFollowing = currentUser => async dispatch => {
   try {
     const url =`${apiUrl}users/${currentUser}/following`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserFollowing(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };
 
-export const getUserRepos = (currentUser) => async (dispatch) => {
+export const getUserRepos = currentUser => async dispatch => {
   try {
     const url =`${apiUrl}users/${currentUser}/repos`;
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserRepos(responseBody));
-  } catch (e) { console.log(e); }
+  } catch (e) { console.error(e); }
 };

@@ -6,41 +6,45 @@ import Member from '../Member/Member';
 
 class OrgPage extends React.Component {
   componentDidMount() {
-    this.props.getOrg(this.props.match.params.id);
-    this.props.getOrgMembers(this.props.match.params.id);
-    this.props.getOrgRepos(this.props.match.params.id);
+    const { getOrg, getOrgMembers, getOrgRepos, match } = this.props;
+
+    getOrg(match.params.id);
+    getOrgMembers(match.params.id);
+    getOrgRepos(match.params.id);
   }
+
   render() {
+    const { org, currentOrgRepos, currentOrgMembers, getCurrentUser } = this.props;
     let orgMembers = this.props.currentOrgMembers.slice(0,5);
-    let { org } = this.props;
+
     return (
         <div className="page-inner">
           <OrgInfoContainer />
           <div className="members-wrap">
             <h2 className="title">Members</h2>
               <ul className="users-list">
-                {orgMembers.map((member, index) => (
+                {orgMembers.map(member => (
                   <Member
-                    index={index}
-                    getUser={()=>{this.props.getCurrentUser(member.login)}}
+                    getUser={() => getCurrentUser(member.login)}
                     avatar={member.avatar_url}
                     login={member.login}
+                    id={member.id}
+                    key={member.id}
                   />
                 ))}
               </ul>
             <div className="view-all-wrap">
-              {(this.props.currentOrgMembers.length > 5) ? 
-              <Link 
-                to={`/org/${org.login}/members`}
-                className="view-all"
-              >
-                View all members
-              </Link> : null }
+              {(currentOrgMembers.length > 5)
+              ? <Link 
+                  to={`/org/${org.login}/members`}
+                  className="view-all"
+                >
+                  View all members
+                </Link>
+              : null }
             </div>
           </div>
-          <ReposList 
-            repos={this.props.currentOrgRepos}
-          />
+          <ReposList repos={currentOrgRepos} />
         </div>
     );
   }

@@ -10,10 +10,11 @@ const mapStateToProps = state => ({
   orgs: state.orgs,
   currentOrg: state.currentOrg,
 });
+
 const mapDispatchToProps = {
-    getOrgs,
-    getCurrentOrg,
-    addResult,
+  getOrgs,
+  getCurrentOrg,
+  addResult,
 };
 
 export const SearchContainer = connect(

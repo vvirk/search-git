@@ -6,37 +6,47 @@ import s from './styles/orgInfo.module.css';
 
 class OrgInfo extends React.Component {
   render() {
-      let { org } = this.props;
+      const { org } = this.props;
+      const {
+        avatar_url,
+        name,
+        login,
+        description,
+        location,
+        email,
+        blog,
+        is_verified
+      } = org;
+
     return (
       <div className={s.wrap}>
         <div className={s.logo}>
-          <img src={org.avatar_url} alt={`${org.name} avatar`}/>
+          <img src={avatar_url} alt={`${name} avatar`}/>
         </div>
         <div className={s.info}>
           <div className={s.titleWrap}>
             <Link 
-              to={`/org/${org.login}`}
+              to={`/org/${login}`}
               className={s.title}
             >
-              {(org.name == null) ? org.login : org.name}
+              {(name === null) ? login : name}
             </Link>
-            {(org.description !== null) ? <p className={s.desc}>{org.description}</p> : null}
+            {description && <p className={s.desc}>{description}</p>}
           </div>  
           <ul className={s.infoList}>
-            {(org.location !== null) ? 
-              <li className={s.infoItem}>{org.location}</li> : null}
-            {(org.blog !== null) ?
+            {location && <li className={s.infoItem}>{location}</li>}
+            {blog &&
               <li className={s.infoItem}>
                 <a 
-                  href={org.blog}
-                  target="_blank"                   
+                  href={blog}
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {org.blog}
+                  {blog}
                 </a>
-              </li> : null}
-            {(org.email !== null) ? <li className={s.infoItem}>{org.email}</li> : null}
-            {(org.is_verified === true) ? <li className={s.verifed}>verifed</li> : null}
+              </li>}
+            {email && <li className={s.infoItem}>{email}</li>}
+            {is_verified && <li className={s.verifed}>verifed</li>}
           </ul>
         </div>
       </div>

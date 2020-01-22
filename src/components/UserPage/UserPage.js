@@ -7,16 +7,16 @@ import s from './styles/userPage.module.css';
 
 class UserPage extends React.Component {
   componentDidMount() {
-    this.props.getUser(this.props.match.params.id);
-    this.props.getUserRepos(this.props.match.params.id);
+    const { getUser, match, getUserRepos } = this.props;
+
+    getUser(match.params.id);
+    getUserRepos(match.params.id);
   }
   render() {
     return (
       <div className={s.userPageInner}>
         <UserInfoContainer />
-        <ReposList 
-          repos={this.props.currentUserRepos}
-        />
+        <ReposList repos={this.props.currentUserRepos} />
       </div>
     );
   }

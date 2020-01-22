@@ -6,55 +6,68 @@ import s from './styles/userInfo.module.css';
 
 class UserInfo extends React.Component {
   render() {
-    let { currentUserInfo } = this.props;
+    const { currentUserInfo } = this.props;
+    const {
+      avatar_url,
+      login,
+      name,
+      bio,
+      company,
+      location,
+      blog,
+      email,
+      followers,
+      following
+    } = currentUserInfo;
+
     return (
       <div className={s.infoWrap}>
         <div className={s.logo}>
-          <img src={currentUserInfo.avatar_url} alt={`${currentUserInfo.login} avatar`} />
+          <img src={avatar_url} alt={`${login} avatar`} />
         </div>
         <div className={s.info}>
           <div className="title-wrap">
             <Link 
-              to={`/users/${currentUserInfo.login}`}
+              to={`/users/${login}`}
               className={s.title}
             >
-              {currentUserInfo.name}
+              {name}
             </Link>
-            <p className={s.desc}>{currentUserInfo.login}</p>
-            {(currentUserInfo.bio !== null) ? <p className="desc">{currentUserInfo.bio}</p> : null}
+            <p className={s.desc}>{login}</p>
+            {bio && <p className="desc">{bio}</p>}
           </div>
           <ul className={s.infoList}>
-            {(currentUserInfo.company !== null) ? 
+            {company && 
             <li className={s.infoItem}>
-              {currentUserInfo.company}
-            </li> : null}
-            {(currentUserInfo.location !== null) ? 
-              <li className={s.infoItem}>{currentUserInfo.location}</li> : null}
-            {(currentUserInfo.blog !== null) ? 
+              {company}
+            </li>}
+            {location && 
+              <li className={s.infoItem}>{location}</li>}
+            {blog && 
               <li className={s.infoItem}>
                 <a 
-                  href={currentUserInfo.blog}
-                  target="_blank"                   
+                  href={blog}
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {currentUserInfo.blog}
+                  {blog}
                 </a>
-              </li> : null}
-            {(currentUserInfo.email !== null) ? 
-              <li className={s.infoItem}>{currentUserInfo.email}</li> : null}
+              </li>}
+            {email && 
+              <li className={s.infoItem}>{email}</li>}
           </ul>
           <div className={s.folowWrap}>
             <Link 
-              to={`/users/${currentUserInfo.login}/followers`}
+              to={`/users/${login}/followers`}
               className={s.folowLink}
             >
-              followers({currentUserInfo.followers})
+              followers({followers})
             </Link>
             <Link 
-              to={`/users/${currentUserInfo.login}/following`}
+              to={`/users/${login}/following`}
               className={s.folowLink}
             >
-              following({currentUserInfo.following})
+              following({following})
             </Link>
           </div>
         </div>
