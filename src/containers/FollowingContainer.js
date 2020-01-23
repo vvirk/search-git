@@ -3,17 +3,20 @@ import UserFollowing from '../components/UserFollowing/UserFollowing';
 import {
   getUserFollowing,
   getUser,
+  toggleIsFetching,
 } from '../actions/index';
 
 const mapStateToProps = state => ({
   currentUser: state.currentUser,
   currentUserInfo: state.currentUserInfo, 
   currentUserFollowing: state.currentUserFollowing,
+  isFetching: state.isFetching,
 });
 
 const mapDispatchToProps = {
   getUserFollowing,
   getUser,
+  toggleIsFetching,
 };
 
 export const FollowingContainer = connect(

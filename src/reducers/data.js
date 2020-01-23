@@ -11,7 +11,9 @@ export const initialState = {
   currentUserFollowers: [],
   currentUserFollowing: [],
   currentUserRepos: [],
+  isFetching: false,
 };
+
 export const data = (state = initialState, action) => {
   switch (action.type) {
     case type.ADD_RESULT:
@@ -33,7 +35,9 @@ export const data = (state = initialState, action) => {
     case type.ADD_USER_FOLLOWING:
       return { ...state, currentUserFollowing: action.userFollowing };
     case type.ADD_USER_REPOS:
-      return { ...state, currentUserRepos: action.userRepos };  
+      return { ...state, currentUserRepos: action.userRepos };
+    case type.TOGGLE_IS_FETSHING:
+      return { ...state, isFetching: action.isFetching };
     default:
       return state;
   }

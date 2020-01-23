@@ -6,10 +6,10 @@ const ReposList = ({ repos, }) => (
   <div>
     {repos && <h2 className={s.title}>Repos</h2>}
     <ul className={s.list}>
-      {repos.map((repo, index) => (
+      {repos.map(repo => (
         <li 
           className={s.item}
-          key={index}
+          key={repo.id}
         >
           <a 
             className={s.itemLink}

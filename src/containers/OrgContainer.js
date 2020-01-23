@@ -4,6 +4,7 @@ import {
     getOrgMembers,
     getCurrentUser,
     getOrgRepos,
+    toggleIsFetching,
 } from '../actions/index';
 import OrgPage from '../components/OrgPage/OrgPage';
 
@@ -13,6 +14,7 @@ const mapStateToProps = state => ({
   currentOrgMembers: state.currentOrgMembers,
   currentOrgRepos: state.currentOrgRepos,
   currentUser: state.currentUser,
+  isFetching: state.isFetching,
 });
 
 const mapDispatchToProps = {
@@ -20,6 +22,7 @@ const mapDispatchToProps = {
   getOrgMembers,
   getCurrentUser,
   getOrgRepos,
+  toggleIsFetching,
 };
 
 export const OrgContainer = connect(

@@ -1,4 +1,5 @@
 import React from 'react';
+import history from '../../history';
 import { Link } from 'react-router-dom';
 
 // styles
@@ -13,7 +14,7 @@ class Header extends React.Component {
         <Link
           to="/"
           className={s.logo}
-          onClick={() => addResult('')}
+          onClick={() => {addResult(''); history.push('#')}}
         >
           GitSearch
         </Link>

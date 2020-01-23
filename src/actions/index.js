@@ -50,6 +50,11 @@ export const addUserRepos = userRepos => ({
   userRepos,
 });
 
+export const toggleIsFetching = isFetching => ({
+  type: type.TOGGLE_IS_FETSHING,
+  isFetching,
+});
+
 export const apiUrl = 'https://api.github.com/';
 export const getOrgs = orgsname => async dispatch => {
   try {
@@ -57,6 +62,7 @@ export const getOrgs = orgsname => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addResult(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -66,6 +72,7 @@ export const getOrg = currentOrg => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgInfo(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -75,6 +82,7 @@ export const getOrgMembers = currentOrg => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgMembers(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -84,6 +92,7 @@ export const getOrgRepos = currentOrg => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addOrgRepos(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -93,6 +102,7 @@ export const getUser = currentUser => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUser(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -102,6 +112,7 @@ export const getUserFollowers = currentUser => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserFollowers(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -111,6 +122,7 @@ export const getUserFollowing = currentUser => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserFollowing(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };
 
@@ -120,5 +132,6 @@ export const getUserRepos = currentUser => async dispatch => {
     const response = await fetch(url);
     const responseBody = await response.json();
     dispatch(addUserRepos(responseBody));
+    dispatch(toggleIsFetching(false));
   } catch (e) { console.error(e); }
 };

@@ -3,21 +3,25 @@ import { Link } from 'react-router-dom';
 import OrgInfoContainer from '../../containers/OrgInfoContainer';
 import ReposList from '../ReposList/ReposList';
 import Member from '../Member/Member';
+import Preloader from '../Preloader/Preloader';
 
 class OrgPage extends React.Component {
   componentDidMount() {
-    const { getOrg, getOrgMembers, getOrgRepos, match } = this.props;
+    const { getOrg, getOrgMembers, getOrgRepos, match, toggleIsFetching } = this.props;
 
+    toggleIsFetching(true);
     getOrg(match.params.id);
     getOrgMembers(match.params.id);
     getOrgRepos(match.params.id);
   }
 
   render() {
-    const { org, currentOrgRepos, currentOrgMembers, getCurrentUser } = this.props;
+    const { org, currentOrgRepos, currentOrgMembers, getCurrentUser, isFetching } = this.props;
     let orgMembers = this.props.currentOrgMembers.slice(0,5);
 
     return (
+      <>
+        {isFetching && <Preloader />}
         <div className="page-inner">
           <OrgInfoContainer />
           <div className="members-wrap">
@@ -46,6 +50,7 @@ class OrgPage extends React.Component {
           </div>
           <ReposList repos={currentOrgRepos} />
         </div>
+        </>
     );
   }
 }
